@@ -126,18 +126,18 @@ export default {
     // เช็คการเปลี่ยนแปลง
 
     // ถ้าเลือกไม่มีแผล จะกำหนดไม่มีสีด้วย
-    wolselect() {
-      if (this.wolselect === "ไม่มีแผล") {
+    wolselect(newSelect, oldSelect) {
+      if (newSelect === "ไม่มีแผล") {
         this.wcselect = "ไม่มีสี";
-      } else {
+      } else if(oldSelect === "ไม่มีแผล" && this.wcselect === "ไม่มีสี"){
         this.wcselect = "";
       }
     },
 
     // ถ้าเลือกสี จะกำหนดให้มีแผล
-    wcselect() {
-      if (this.wcselect !== "ไม่มีสี") {
-          this.wolselect = "มีแผล";
+    wcselect(newSelect) {
+      if (newSelect !== "ไม่มีสี") {
+        this.wolselect = "มีแผล";
       } else {
         this.wolselect = "ไม่มีแผล";
       }
@@ -153,9 +153,6 @@ export default {
         console.log(this.wcselect);
 
         /** Code วิเคราะห์ */
-
-
-
 
         /** Code end */
       } else {
