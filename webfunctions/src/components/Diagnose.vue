@@ -122,29 +122,42 @@ export default {
     });
   },
 
+  watch: {
+    // เช็คการเปลี่ยนแปลง
+
+    // ถ้าเลือกไม่มีแผล จะกำหนดไม่มีสีด้วย
+    wolselect() {
+      if (this.wolselect === "ไม่มีแผล") {
+        this.wcselect = "ไม่มีสี";
+      } else {
+        this.wcselect = "";
+      }
+    },
+
+    // ถ้าเลือกสี จะกำหนดให้มีแผล
+    wcselect() {
+      if (this.wcselect !== "ไม่มีสี") {
+          this.wolselect = "มีแผล";
+      } else {
+        this.wolselect = "ไม่มีแผล";
+      }
+    },
+  },
+
   methods: {
     cal() {
-      // if (
-      //   this.mlselect == "จุดหรือขุยสีขาว" &&
-      //   this.clselect == "สีเหลืองเขียว" &&
-      //   this.wlselect == "ไม่มีแผล" &&
-      //   this.clwselect == "ไม่มีสี"
-      // ) {
-      //   console.log("โรคราแป้ง");
-      // }
-
       if (this.mlselect && this.lfselect && this.wolselect && this.wcselect) {
         console.log(this.mlselect);
         console.log(this.lfselect);
         console.log(this.wolselect);
         console.log(this.wcselect);
 
-        
+        /** Code วิเคราะห์ */
 
-        this.mlselect = "";
-        this.lfselect = "";
-        this.wolselect = "";
-        this.wcselect = "";
+
+
+
+        /** Code end */
       } else {
         alert("กรุณาเลือกข้อมูลเพื่อวินิจฉัยให้ครบถ้วน");
       }
