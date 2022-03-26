@@ -129,7 +129,7 @@ export default {
     wolselect(newSelect, oldSelect) {
       if (newSelect === "ไม่มีแผล") {
         this.wcselect = "ไม่มีสี";
-      } else if(oldSelect === "ไม่มีแผล" && this.wcselect === "ไม่มีสี"){
+      } else if (oldSelect === "ไม่มีแผล" && this.wcselect === "ไม่มีสี") {
         this.wcselect = "";
       }
     },
@@ -151,8 +151,39 @@ export default {
         console.log(this.lfselect);
         console.log(this.wolselect);
         console.log(this.wcselect);
-
         /** Code วิเคราะห์ */
+
+        if (this.wolselect === "มีแผล") {
+          if (this.wcselect === "เหลือง") {
+            alert("โรคใบจุดแบคทีเรีย");
+          } else if (this.wcselect === "น้ำตาล") {
+            alert("โรคใบจุดตากบ");
+          }
+        }
+
+        if (this.wolselect === "ไม่มีแผล") {
+          if (this.mlselect === "ด่าง") {
+            if (this.lfselect === "สีเหลืองกับสีเขียว") {
+              alert("โรคใบหงิกเหลือง");
+            } else if (this.lfselect === "สีเหลือง") {
+              alert("โรคใบหงิกเหลือง");
+            } else if (this.lfselect === "สีเขียวอ่อน") {
+              alert("โรคใบด่างประพริก");
+            }
+          } else if (this.mlselect === "ใบจุดสีขาว") {
+            alert("โรคราแป้งพริก");
+          } else if (this.mlselect === "เบี้ยวและหงิกงอ") {
+            if (this.lfselect === "สีเหลืองกับสีเขียว") {
+              alert("โรคใบหงิกเหลือง");
+            } else if (this.lfselect === "สีเหลือง") {
+              alert("โรคใบหงิกเหลือง");
+            } else if (this.lfselect === "สีเขียวอ่อน") {
+              alert("โรคใบด่างประพริก");
+            }
+          } else if (this.mlselect === "ไหม้") {
+            alert("โรคไวรัสใบจุดวงแหวน");
+          }
+        }
 
         /** Code end */
       } else {
