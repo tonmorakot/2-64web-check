@@ -1,19 +1,17 @@
 <template>
-  <v-contant>
-    <Template/>
-    
-  </v-contant>
+  <div>
+    <Template />
+  </div>
 </template>
 
 <script>
-import Template from '../components/Template.vue';
+import Template from "../components/Template.vue";
 //import Details from '../components/Details.vue';
-  export default {
-    name: 'Home',
-    components: {
-      Template,
-     // Details,
-    }
-    
-  }
+export default {
+  name: "Home",
+  components: {
+    Template,
+    // Details,
+  },
+};
 </script>

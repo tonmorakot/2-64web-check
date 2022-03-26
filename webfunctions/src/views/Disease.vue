@@ -1,27 +1,20 @@
 <template>
-<div class="disease">
-    <v-container>
-  <v-contant>
-    <br><br><br><br>
-      <Diagnose/>
-  </v-contant>
-    </v-container>
-</div>
+  <div class="disease">
+    <div class="mt-5">
+      <Diagnose />
+    </div>
+  </div>
 </template>
 
 <script>
+import Diagnose from "../components/Diagnose.vue";
 
-  import Diagnose from '../components/Diagnose.vue';
-
-  export default {
-    name: 'Disease',
-    components: {
-        Diagnose
-    }
-    
-  }
+export default {
+  name: "Disease",
+  components: {
+    Diagnose,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
